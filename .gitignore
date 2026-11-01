@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+securereview.db
+data/demo_samples/
+.DS_Store
