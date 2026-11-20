@@ -19,16 +19,22 @@ etc.), keep the same function signature — run_ai_reviewer(file_path) returns
 import subprocess
 import json
 import os
+import shutil
+import tempfile
 import random
 
 USE_MOCK = True  # flip to False once the real tool is installed and authenticated
 TOOL_NAME = "Snyk Code (mock)" if USE_MOCK else "Snyk Code"
 
 
+SNYK_TIMEOUT = int(os.environ.get("SNYK_TIMEOUT", "180"))  # Snyk Code uploads and analyzes in the cloud, so 30 s is too short
+
+
 def run_ai_reviewer_real(file_path):
     """
     Runs Snyk Code on one sample. Returns (flag, raw_output).
 
+    Snyk Code scans a folder, so the sample is copied into its own temporary folder first.
     BUG-05 fix: Snyk exit codes are 0 (no issues), 1 (issues found), 2 (failure) and
     3 (no supported files). Only 0 and 1 with a well formed SARIF body are scored.
     Anything else, and any unreadable or missing file, returns "Error".
@@ -36,12 +42,14 @@ def run_ai_reviewer_real(file_path):
     if not os.path.isfile(file_path) or not os.access(file_path, os.R_OK):
         return "Error", f"Unreadable or missing file: {file_path}"
     try:
-        result = subprocess.run(
-            ["snyk", "code", "test", "--json", file_path],
-            capture_output=True, text=True, timeout=30,
-        )
+        with tempfile.TemporaryDirectory(prefix="srai_") as tmp:
+            shutil.copy(file_path, os.path.join(tmp, os.path.basename(file_path)))
+            result = subprocess.run(
+                ["snyk", "code", "test", "--json", tmp],
+                capture_output=True, text=True, timeout=SNYK_TIMEOUT,
+            )
         if result.returncode not in (0, 1):
-            return "Error", f"Snyk exit code {result.returncode}: {result.stderr[:300]}"
+            return "Error", f"Snyk exit code {result.returncode}: {(result.stdout + result.stderr)[:300]}"
         output = json.loads(result.stdout)
         runs = output.get("runs")
         if not runs or "results" not in runs[0]:
@@ -51,7 +59,7 @@ def run_ai_reviewer_real(file_path):
         return flag, result.stdout
     except subprocess.TimeoutExpired:
         return "Error", "Timed out"
-    except (json.JSONDecodeError, IndexError, FileNotFoundError) as e:
+    except (json.JSONDecodeError, IndexError, FileNotFoundError, OSError) as e:
         return "Error", f"{type(e).__name__}: {e}"
 
 
