@@ -3,3 +3,11 @@ __pycache__/
 securereview.db
 data/demo_samples/
 .DS_Store
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+.snyk
+data/owasp_samples/
+data/owasp_metadata.csv

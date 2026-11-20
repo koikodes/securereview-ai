@@ -131,37 +131,64 @@ def load_demo_samples(db_path=DB_PATH, samples_dir=DEMO_SAMPLES_DIR):
     return count
 
 
-def load_from_metadata_csv(metadata_csv_path, db_path=DB_PATH):
+def load_from_metadata_csv(metadata_csv_path, db_path=DB_PATH, allowed_root=None):
     """
     REAL MODE: load real benchmark samples from a metadata CSV.
     Expected CSV columns: sample_id, file_path, cwe_category, ground_truth
     (ground_truth must be exactly 'Vulnerable' or 'Clean')
+
+    Fixes for BUG-01 to BUG-04:
+      BUG-01  file_path must resolve inside allowed_root (default: this project's data/ folder).
+      BUG-02  a duplicate sample_id is skipped and reported, and the other rows still load.
+      BUG-03  if no valid rows are found, the existing samples are kept and a warning is shown.
+      BUG-04  a missing CSV raises a clear error before the database is touched, and the
+              connection is always closed.
     """
-    conn = init_db(db_path)
-    conn.execute("DELETE FROM samples")
-    count = 0
-    skipped = []
+    if not os.path.isfile(metadata_csv_path):
+        raise FileNotFoundError(f"Metadata CSV not found: {metadata_csv_path}")
+    root = Path(allowed_root or Path(__file__).resolve().parent).resolve()
+
+    valid = []
+    skipped = []  # list of (sample_id, reason)
+    seen = set()
     with open(metadata_csv_path, newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            gt = row.get("ground_truth", "").strip()
-            if gt not in ("Vulnerable", "Clean"):
-                skipped.append(row.get("sample_id", "?"))
-                continue
-            if not os.path.exists(row["file_path"]):
-                skipped.append(row.get("sample_id", "?"))
-                continue
-            conn.execute(
-                "INSERT INTO samples (sample_id, file_path, cwe_category, ground_truth) VALUES (?, ?, ?, ?)",
-                (row["sample_id"], row["file_path"], row["cwe_category"], gt),
-            )
-            count += 1
-    conn.commit()
-    conn.close()
-    print(f"Loaded {count} real samples from {metadata_csv_path} into {db_path}")
+        for row in csv.DictReader(f):
+            sid = (row.get("sample_id") or "").strip()
+            gt = (row.get("ground_truth") or "").strip()
+            path = (row.get("file_path") or "").strip()
+            cat = (row.get("cwe_category") or "").strip()
+            if not sid or not path or not cat:
+                skipped.append((sid or "?", "missing field"))
+            elif gt not in ("Vulnerable", "Clean"):
+                skipped.append((sid, "bad ground truth"))
+            elif sid in seen:
+                skipped.append((sid, "duplicate sample_id"))
+            elif not os.path.isfile(path):
+                skipped.append((sid, "missing file"))
+            elif not Path(path).resolve().is_relative_to(root):
+                skipped.append((sid, "path outside sample folder"))
+            else:
+                seen.add(sid)
+                valid.append((sid, path, cat, gt))
+
     if skipped:
-        print(f"Skipped {len(skipped)} rows (bad ground truth or missing file): {skipped[:10]}{'...' if len(skipped) > 10 else ''}")
-    return count
+        print(f"Skipped {len(skipped)} rows: {skipped[:10]}{'...' if len(skipped) > 10 else ''}")
+    if not valid:
+        print(f"WARNING: no valid rows found in {metadata_csv_path}. Existing samples were kept.")
+        return 0
+
+    conn = init_db(db_path)
+    try:
+        with conn:  # one transaction: all or nothing
+            conn.execute("DELETE FROM samples")
+            conn.executemany(
+                "INSERT INTO samples (sample_id, file_path, cwe_category, ground_truth) VALUES (?, ?, ?, ?)",
+                valid,
+            )
+    finally:
+        conn.close()
+    print(f"Loaded {len(valid)} real samples from {metadata_csv_path} into {db_path}")
+    return len(valid)
 
 
 if __name__ == "__main__":

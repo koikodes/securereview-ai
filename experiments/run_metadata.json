@@ -1,0 +1,22 @@
+{
+  "run_id": "sg-511f82",
+  "started_utc": "2026-11-20T21:42:05.235395+00:00",
+  "elapsed_seconds": 2062.8,
+  "samples": 272,
+  "semgrep_version": "1.186.0",
+  "semgrep_config": "/home/claude/exp/sr/java",
+  "semgrep_rules_repo": "https://github.com/semgrep/semgrep-rules",
+  "semgrep_rules_commit": "a5ad1714f00c9f7fde980cab0ea1d6dc6d414fd2",
+  "semgrep_rule_count_loaded": 113,
+  "flag_rule": "Y if Semgrep reports one or more findings in the file, N if scanned with zero findings, Error otherwise",
+  "benchmark_repo": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+  "benchmark_commit": "10dfcc54ad02dcfcb358b0ba4a0fef8c919a6d17",
+  "sampling": "prepare_owasp_samples.py --per-category 34, seed 42, 17 vulnerable and 17 clean per category",
+  "python": "3.13.18",
+  "os": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "cpus": 2,
+  "ram": "7.8Gi",
+  "workers": 2,
+  "ai_reviewer": "NOT RUN: Snyk Code (api.snyk.io) is blocked from the sandbox and no authenticated token was available"
+}

@@ -82,3 +82,10 @@ The full pipeline runs end to end in demo mode and on 272 real OWASP Benchmark s
 - The dataset loader does not yet restrict file paths to the sample folder.
 - Semgrep with the auto ruleset needs internet access to download rules.
 - A shareable dashboard link has not been deployed yet.
+
+## Fixes and experiment status (20 Nov 2026)
+
+- BUG-01 to BUG-05 fixed with regression tests: `python3 -m unittest tests.test_regressions tests.test_stats`
+- Semgrep arm run on 272 OWASP Benchmark v1.2 samples. Results and run record are in `experiments/` (see `experiments/README.md`).
+- Not yet done: the AI reviewer arm (Snyk Code), the McNemar test and repeated AI runs.
+- Run the real tools by setting `USE_MOCK = False` in the adapter files. Semgrep reads its rules from the `SEMGREP_CONFIG` environment variable, which defaults to `auto`.

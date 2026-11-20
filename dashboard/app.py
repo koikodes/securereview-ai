@@ -98,7 +98,7 @@ with col2:
     chart_df = overall_df[["Recall", "False Positive Rate", "Precision"]].reset_index().melt(
         id_vars="Tool", var_name="Metric", value_name="Value"
     )
-    st.bar_chart(chart_df, x="Metric", y="Value", color="Tool", use_container_width=True)
+    st.bar_chart(chart_df, x="Metric", y="Value", color="Tool", stack=False, use_container_width=True)
 
 # ---------- By CWE category ----------
 st.header("Results by CWE Category")
@@ -119,7 +119,7 @@ else:
     by_cat_df = pd.DataFrame(rows)
 
     pivot = by_cat_df.pivot(index="CWE Category", columns="Tool", values=metric_choice)
-    st.bar_chart(pivot, use_container_width=True)
+    st.bar_chart(pivot, stack=False, use_container_width=True)
     st.dataframe(
         pivot.style.format("{:.1%}" if metric_choice != "F1" else "{:.2f}", na_rep="N/A"),
         use_container_width=True,
