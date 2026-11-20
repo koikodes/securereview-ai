@@ -19,8 +19,20 @@ import subprocess
 import json
 import os
 
-USE_MOCK = True  # flip to False once Semgrep (or your chosen tool) is installed
-TOOL_NAME = "Semgrep (mock)" if USE_MOCK else "Semgrep"
+USE_MOCK = os.environ.get("SECUREREVIEW_REAL") != "1"  # set SECUREREVIEW_REAL=1 to run the real tools
+def _version():
+    try:  # instant and needs no network, works when semgrep is installed in this environment
+        from importlib.metadata import version
+        return version("semgrep")
+    except Exception:
+        pass
+    try:
+        return subprocess.run(["semgrep", "--version", "--disable-version-check"], capture_output=True, text=True, timeout=60).stdout.strip().splitlines()[-1]
+    except Exception:
+        return "unknown version"
+
+
+TOOL_NAME = "Semgrep (mock)" if USE_MOCK else f"Semgrep {_version()}"
 
 
 SEMGREP_CONFIG = os.environ.get("SEMGREP_CONFIG", "auto")  # e.g. a local rules folder when offline

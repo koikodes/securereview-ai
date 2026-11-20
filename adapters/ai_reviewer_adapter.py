@@ -23,8 +23,15 @@ import shutil
 import tempfile
 import random
 
-USE_MOCK = True  # flip to False once the real tool is installed and authenticated
-TOOL_NAME = "Snyk Code (mock)" if USE_MOCK else "Snyk Code"
+USE_MOCK = os.environ.get("SECUREREVIEW_REAL") != "1"  # set SECUREREVIEW_REAL=1 to run the real tools
+def _version():
+    try:
+        return subprocess.run(["snyk", "--version"], capture_output=True, text=True, timeout=30).stdout.strip().splitlines()[0]
+    except Exception:
+        return "unknown version"
+
+
+TOOL_NAME = "Snyk Code (mock)" if USE_MOCK else f"Snyk Code {_version()}"
 
 
 SNYK_TIMEOUT = int(os.environ.get("SNYK_TIMEOUT", "180"))  # Snyk Code uploads and analyzes in the cloud, so 30 s is too short

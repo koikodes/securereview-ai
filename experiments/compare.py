@@ -1,7 +1,7 @@
 """
 Compares the two tools of one orchestrator run: confusion data, metrics, Wilson 95% intervals,
 and the exact McNemar test on per-sample correctness.
-Usage: python3 experiments/compare.py [run_id]     (default: latest full run)
+Usage: python3 experiments/compare.py [run_id]     (default: latest run)
 Writes experiments/comparison.json and experiments/comparison_confusion.csv
 """
 import os, sys, json, csv, sqlite3
@@ -12,7 +12,7 @@ from data.load_dataset import DB_PATH
 
 conn = sqlite3.connect(DB_PATH)
 run_id = sys.argv[1] if len(sys.argv) > 1 else conn.execute(
-    "SELECT run_id FROM runs WHERE mode='full' ORDER BY started_at DESC LIMIT 1").fetchone()[0]
+    "SELECT run_id FROM runs WHERE mode IN ('full','pilot') ORDER BY started_at DESC LIMIT 1").fetchone()[0]
 rows = conn.execute("""SELECT r.tool, r.sample_id, r.classification, s.cwe_category
                        FROM results r JOIN samples s USING(sample_id) WHERE r.run_id=?""", (run_id,)).fetchall()
 out = {"run_id": run_id, "tools": {}}
