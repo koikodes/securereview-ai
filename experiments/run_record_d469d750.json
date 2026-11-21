@@ -1,0 +1,22 @@
+{
+  "run": {
+    "run_id": "d469d750",
+    "started_at": "2026-11-20T23:42:59.574784+00:00",
+    "ai_tool_name": "Snyk Code 1.1309.0",
+    "static_tool_name": "Semgrep 1.136.0",
+    "mode": "full",
+    "sample_count": 272
+  },
+  "exported_utc": "2026-11-21T03:13:55Z",
+  "snyk_version": "1.1309.0",
+  "semgrep_version": "1.136.0",
+  "semgrep_config": "../semgrep-rules/java",
+  "semgrep_rules_commit": "a5ad1714",
+  "benchmark_commit": "10dfcc54a",
+  "semgrep_timeout_seconds": "120 for the retry, 30 for the first pass",
+  "python": "3.9.6",
+  "os": "macOS-15.8.1-x86_64-i386-64bit",
+  "machine": "x86_64",
+  "hardware": "Intel(R) Core(TM) i3-1000NG4 CPU @ 1.10GHz\n8 GB RAM",
+  "note": "Samples that timed out on Semgrep in the first pass were rerun once with a longer timeout using experiments/retry_errors.py"
+}

@@ -1,0 +1,273 @@
+sample_id,cwe_category,ground_truth,snyk_flag,snyk_class,snyk_rules,semgrep_flag,semgrep_class,semgrep_rules
+BenchmarkTest00002,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00007,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest00009,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00015,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest00019,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest00026,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest00035,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest00058,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00061,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00065,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,N,FN,
+BenchmarkTest00079,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest00083,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest00097,Trust Boundary Violation (CWE-501),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest00108,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest00115,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli
+BenchmarkTest00121,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00123,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest00125,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest00135,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest00144,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,N,FN,
+BenchmarkTest00151,Cross-Site Scripting / XSS (CWE-79),Clean,Y,FP,java/UserControlledFormatString;java/XSS,N,TN,
+BenchmarkTest00176,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest00178,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00189,Trust Boundary Violation (CWE-501),Clean,N,TN,,N,TN,
+BenchmarkTest00195,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest00214,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00220,Path Traversal (CWE-22),Clean,N,TN,,N,TN,
+BenchmarkTest00236,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest00260,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00261,Path Traversal (CWE-22),Clean,N,TN,,N,TN,
+BenchmarkTest00262,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00272,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-md5
+BenchmarkTest00275,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest00292,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest00293,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest00295,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest00307,Command Injection (CWE-78),Clean,Y,FP,java/CommandInjection,N,TN,
+BenchmarkTest00322,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,N,TN,
+BenchmarkTest00324,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation,Y,TP,tainted-session-from-http-request
+BenchmarkTest00327,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest00340,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,tainted-sql-from-http-request
+BenchmarkTest00363,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00378,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest00410,Command Injection (CWE-78),Clean,Y,FP,java/EnvCommandInjection,N,TN,
+BenchmarkTest00419,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00426,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest00451,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00454,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest00457,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,N,FN,
+BenchmarkTest00465,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-md5
+BenchmarkTest00466,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00497,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest00518,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest00523,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00528,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,N,FN,
+BenchmarkTest00581,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00586,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,N,TN,
+BenchmarkTest00625,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest00628,Path Traversal (CWE-22),Clean,N,TN,,N,TN,
+BenchmarkTest00632,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00636,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest00638,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest00647,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest00666,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00676,SQL Injection (CWE-89),Clean,N,TN,,N,TN,
+BenchmarkTest00697,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00715,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest00718,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest00744,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00751,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00755,Trust Boundary Violation (CWE-501),Clean,N,TN,,Y,FP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest00756,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation,Y,TP,tainted-session-from-http-request
+BenchmarkTest00757,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest00758,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,N,TN,
+BenchmarkTest00766,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,no-direct-response-writer;tainted-sql-from-http-request
+BenchmarkTest00771,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli
+BenchmarkTest00775,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00776,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest00779,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest00791,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00792,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00793,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00796,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest00798,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest00826,Command Injection (CWE-78),Clean,N,TN,,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest00835,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,N,TN,
+BenchmarkTest00842,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,N,FN,
+BenchmarkTest00863,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest00872,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest00897,Command Injection (CWE-78),Clean,N,TN,,Y,FP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest00913,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00914,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00919,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest00934,SQL Injection (CWE-89),Clean,N,TN,,N,TN,
+BenchmarkTest00939,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,jdbc-sqli
+BenchmarkTest00950,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00953,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest00976,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest00979,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest00980,Command Injection (CWE-78),Clean,Y,FP,java/EnvCommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest00983,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest00993,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest00998,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest01000,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest01041,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest01049,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01053,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01056,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01066,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest01082,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01085,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,tainted-sql-from-http-request
+BenchmarkTest01087,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,no-direct-response-writer;tainted-sql-from-http-request
+BenchmarkTest01089,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,tainted-sql-from-http-request
+BenchmarkTest01106,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01113,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest01114,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest01115,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest01118,Path Traversal (CWE-22),Clean,Y,FP,java/PT,N,TN,
+BenchmarkTest01137,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01138,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01143,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01146,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01164,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01203,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01204,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01207,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer
+BenchmarkTest01221,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest01226,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01227,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01233,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest01239,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest01246,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest01257,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01270,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest01272,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01279,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01297,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01319,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01334,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-md5
+BenchmarkTest01360,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest01363,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest01376,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01377,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01403,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest01416,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest01420,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01431,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01438,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01444,Command Injection (CWE-78),Clean,Y,FP,java/EnvCommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest01449,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01472,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest01487,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01516,Command Injection (CWE-78),Clean,N,TN,,Y,FP,command-injection-process-builder
+BenchmarkTest01519,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01520,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01538,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01544,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest01576,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01579,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest01580,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest01581,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01588,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01589,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01593,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01595,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01615,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01620,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest01622,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,tainted-sql-from-http-request
+BenchmarkTest01641,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01661,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01685,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest01686,Command Injection (CWE-78),Clean,N,TN,,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest01687,Command Injection (CWE-78),Clean,N,TN,,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest01710,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01725,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest01737,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01740,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01760,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01763,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01764,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01781,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest01790,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest01792,Command Injection (CWE-78),Clean,N,TN,,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest01802,Trust Boundary Violation (CWE-501),Clean,N,TN,,N,TN,
+BenchmarkTest01814,SQL Injection (CWE-89),Clean,N,TN,,N,TN,
+BenchmarkTest01823,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01825,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01828,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01833,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest01839,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest01841,Path Traversal (CWE-22),Clean,N,TN,,Y,FP,httpservlet-path-traversal
+BenchmarkTest01845,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest01849,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest01851,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest01874,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01876,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01898,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01923,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/UserControlledFormatString;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest01942,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest01956,Trust Boundary Violation (CWE-501),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest01957,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer
+BenchmarkTest01960,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest01976,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest01978,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01980,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest01987,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest01996,Weak Hashing (CWE-328),Vulnerable,N,FN,,N,FN,
+BenchmarkTest02002,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02003,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02020,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest02023,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest02044,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest02067,Command Injection (CWE-78),Clean,Y,FP,java/CommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02084,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest02085,Trust Boundary Violation (CWE-501),Clean,Y,FP,java/TrustBoundaryViolation;java/XSS,Y,FP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest02091,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest02105,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest02112,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest02118,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest02119,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest02138,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02141,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02172,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,tainted-sql-from-http-request
+BenchmarkTest02177,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest02182,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,tainted-sql-from-http-request
+BenchmarkTest02185,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest02191,Weak Cryptography (CWE-327),Clean,Y,FP,java/ServerInformationExposure,N,TN,
+BenchmarkTest02201,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest02210,Weak Hashing (CWE-328),Clean,N,TN,,N,TN,
+BenchmarkTest02226,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest02234,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/UserControlledFormatString;java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02242,Command Injection (CWE-78),Clean,N,TN,,Y,FP,command-injection-process-builder;tainted-cmd-from-http-request
+BenchmarkTest02251,Command Injection (CWE-78),Vulnerable,Y,TP,java/CommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest02253,Command Injection (CWE-78),Clean,Y,FP,java/CommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02278,SQL Injection (CWE-89),Clean,Y,FP,java/Sqli,Y,FP,no-direct-response-writer;tainted-sql-from-http-request
+BenchmarkTest02279,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,no-direct-response-writer;tainted-sql-from-http-request
+BenchmarkTest02288,SQL Injection (CWE-89),Vulnerable,Y,TP,java/Sqli,Y,TP,jdbc-sqli;tainted-sql-from-http-request
+BenchmarkTest02291,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest02301,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest02316,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02320,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,Y,FP,no-direct-response-writer
+BenchmarkTest02386,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest02405,Cross-Site Scripting / XSS (CWE-79),Vulnerable,N,FN,,N,FN,
+BenchmarkTest02406,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest02426,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02437,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest02447,Trust Boundary Violation (CWE-501),Clean,N,TN,,N,TN,
+BenchmarkTest02458,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest02462,Path Traversal (CWE-22),Clean,Y,FP,java/PT,Y,FP,httpservlet-path-traversal
+BenchmarkTest02483,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02487,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02495,Cross-Site Scripting / XSS (CWE-79),Clean,Y,FP,java/XSS,Y,FP,no-direct-response-writer
+BenchmarkTest02504,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02510,Command Injection (CWE-78),Clean,N,TN,,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02513,Command Injection (CWE-78),Clean,Y,FP,java/EnvCommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02515,Command Injection (CWE-78),Vulnerable,Y,TP,java/EnvCommandInjection,Y,TP,tainted-cmd-from-http-request
+BenchmarkTest02518,Command Injection (CWE-78),Clean,Y,FP,java/EnvCommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02540,SQL Injection (CWE-89),Clean,N,TN,,Y,FP,tainted-sql-from-http-request
+BenchmarkTest02555,Path Traversal (CWE-22),Vulnerable,Y,TP,java/PT,Y,TP,httpservlet-path-traversal
+BenchmarkTest02582,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02583,Cross-Site Scripting / XSS (CWE-79),Vulnerable,Y,TP,java/XSS,Y,TP,no-direct-response-writer
+BenchmarkTest02610,Command Injection (CWE-78),Clean,Y,FP,java/CommandInjection,Y,FP,tainted-cmd-from-http-request
+BenchmarkTest02617,Weak Randomness (CWE-330),Clean,Y,FP,java/NoHardcodedCredentials,N,TN,
+BenchmarkTest02623,Trust Boundary Violation (CWE-501),Vulnerable,Y,TP,java/TrustBoundaryViolation;java/XSS,Y,TP,no-direct-response-writer;tainted-session-from-http-request
+BenchmarkTest02660,Weak Cryptography (CWE-327),Vulnerable,Y,TP,java/InsecureCipher;java/ServerInformationExposure,Y,TP,des-is-deprecated;desede-is-deprecated
+BenchmarkTest02670,Weak Hashing (CWE-328),Vulnerable,Y,TP,java/InsecureHash,Y,TP,use-of-sha1
+BenchmarkTest02684,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest02696,Cross-Site Scripting / XSS (CWE-79),Clean,N,TN,,N,TN,
+BenchmarkTest02700,Weak Randomness (CWE-330),Vulnerable,Y,TP,java/InsecureSecret;java/NoHardcodedCredentials,Y,TP,weak-random
+BenchmarkTest02724,Trust Boundary Violation (CWE-501),Clean,N,TN,,N,TN,
+BenchmarkTest02729,SQL Injection (CWE-89),Clean,N,TN,,N,TN,
+BenchmarkTest02736,SQL Injection (CWE-89),Clean,N,TN,,N,TN,
