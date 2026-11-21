@@ -35,6 +35,7 @@ def _version():
 TOOL_NAME = "Semgrep (mock)" if USE_MOCK else f"Semgrep {_version()}"
 
 
+SEMGREP_TIMEOUT = int(os.environ.get("SEMGREP_TIMEOUT", "120"))  # seconds per file, 30 was too short on a busy laptop
 SEMGREP_CONFIG = os.environ.get("SEMGREP_CONFIG", "auto")  # e.g. a local rules folder when offline
 
 
@@ -53,7 +54,7 @@ def run_static_baseline_real(file_path):
         result = subprocess.run(
             ["semgrep", f"--config={SEMGREP_CONFIG}", "--json", "--metrics=off",
              "--disable-version-check", file_path],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True, text=True, timeout=SEMGREP_TIMEOUT,
         )
         if result.returncode not in (0, 1):
             return "Error", f"Semgrep exit code {result.returncode}: {result.stderr[:300]}"
