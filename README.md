@@ -89,3 +89,8 @@ The full pipeline runs end to end in demo mode and on 272 real OWASP Benchmark s
 - Semgrep arm run on 272 OWASP Benchmark v1.2 samples. Results and run record are in `experiments/` (see `experiments/README.md`).
 - Not yet done: the AI reviewer arm (Snyk Code), the McNemar test and repeated AI runs.
 - Run the real tools by setting `USE_MOCK = False` in the adapter files. Semgrep reads its rules from the `SEMGREP_CONFIG` environment variable, which defaults to `auto`.
+
+
+## Real run results (20 Nov 2026)
+
+Run d469d750, 272 samples, 0 errors on both tools. Snyk Code 1.1309.0: recall 0.941, precision 0.650. Semgrep 1.136.0: recall 0.904, precision 0.680. McNemar p = 0.57 overall. Per sample data is in `experiments/per_sample_d469d750.csv` and the environment record is in `experiments/run_record_d469d750.json`. Snyk's two unrelated rules (ServerInformationExposure, NoHardcodedCredentials) inflate its false positives, so the paper also reports a post hoc scoring without them.
