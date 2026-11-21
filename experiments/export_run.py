@@ -41,7 +41,7 @@ rec = {
   "semgrep_config": rules_dir,
   "semgrep_rules_commit": sh(f"git -C '{os.path.dirname(rules_dir.rstrip('/'))}' rev-parse --short HEAD") if rules_dir else "",
   "benchmark_commit": sh("git -C ../BenchmarkJava rev-parse --short HEAD"),
-  "semgrep_timeout_seconds": os.environ.get("SEMGREP_TIMEOUT", "120 for the retry, 30 for the first pass"),
+  "semgrep_timeout_seconds": os.environ.get("SEMGREP_TIMEOUT", "not set when exported, see the note below"),
   "python": platform.python_version(), "os": platform.platform(), "machine": platform.machine(),
   "hardware": sh("sysctl -n machdep.cpu.brand_string 2>/dev/null; sysctl -n hw.memsize 2>/dev/null | awk '{printf \"%.0f GB RAM\", $1/1073741824}'"),
   "note": "Samples that timed out on Semgrep in the first pass were rerun once with a longer timeout using experiments/retry_errors.py",

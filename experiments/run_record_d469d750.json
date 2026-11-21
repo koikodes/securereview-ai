@@ -13,7 +13,7 @@
   "semgrep_config": "../semgrep-rules/java",
   "semgrep_rules_commit": "a5ad1714",
   "benchmark_commit": "10dfcc54a",
-  "semgrep_timeout_seconds": "120 for the retry, 30 for the first pass",
+  "semgrep_timeout_seconds": "30 for the first pass, 180 for the retry of the 25 timeouts (SEMGREP_TIMEOUT=180)",
   "python": "3.9.6",
   "os": "macOS-15.8.1-x86_64-i386-64bit",
   "machine": "x86_64",
