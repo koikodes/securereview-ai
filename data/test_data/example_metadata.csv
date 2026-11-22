@@ -1,0 +1,5 @@
+sample_id,file_path,cwe_category,ground_truth
+SQL_Injection_000,data/test_data/samples/SQL_Injection_000.py,SQL Injection (CWE-89),Vulnerable
+SQL_Injection_001,data/test_data/samples/SQL_Injection_001.py,SQL Injection (CWE-89),Clean
+Weak_Hashing_000,data/test_data/samples/Weak_Hashing_000.py,Weak Hashing (CWE-328),Vulnerable
+Weak_Hashing_001,data/test_data/samples/Weak_Hashing_001.py,Weak Hashing (CWE-328),Clean

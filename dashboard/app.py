@@ -57,14 +57,14 @@ if runs.empty:
     st.error("Could not generate demo data. Check the logs.")
     st.stop()
 
-st.caption("Showing demo data generated automatically on first load. Load your real benchmark dataset and run the full pipeline to replace it — see the README.")
-
 run_options = runs["run_id"] + " — " + runs["mode"] + " (" + runs["sample_count"].astype(str) + " samples, " + runs["started_at"].str.slice(0, 19) + ")"
 selected = st.selectbox("Select a run", run_options)
 selected_run_id = selected.split(" — ")[0]
 
 run_row = runs[runs["run_id"] == selected_run_id].iloc[0]
 st.caption(f"AI reviewer: {run_row['ai_tool_name']}  |  Static baseline: {run_row['static_tool_name']}  |  Mode: {run_row['mode']}")
+if "mock" in f"{run_row['ai_tool_name']} {run_row['static_tool_name']}".lower():
+    st.caption("This run used mock tools (demo data), so its numbers are not real results. Run the pipeline with SECUREREVIEW_REAL=1 to benchmark the real tools. See the README.")
 
 metrics = metrics_for_run(run_id=selected_run_id)
 if metrics is None:

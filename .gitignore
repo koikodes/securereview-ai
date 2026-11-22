@@ -11,3 +11,4 @@ credentials.json
 .snyk
 data/owasp_samples/
 data/owasp_metadata.csv
+!.env.example

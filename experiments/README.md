@@ -10,11 +10,11 @@ Files
 
 Reproduce
 1. git clone https://github.com/OWASP-Benchmark/BenchmarkJava (commit 10dfcc5) and https://github.com/semgrep/semgrep-rules (commit a5ad171)
-2. pip install semgrep==1.186.0
+2. pip install semgrep   # the two-tool run used 1.136.0 (see run_record_d469d750.json)
 3. python3 data/prepare_owasp_samples.py <BenchmarkJava> --per-category 34
 4. python3 -c "from data.load_dataset import load_from_metadata_csv; load_from_metadata_csv('data/owasp_metadata.csv')"
 5. SEMGREP_CONFIG=<semgrep-rules>/java python3 experiments/run_static_experiment.py
 6. python3 experiments/analyze.py <run_id>
 
-Not done: the AI reviewer arm (Snyk Code or a chosen LLM), so no McNemar test and no repeated AI runs.
+This is the earlier Semgrep-only run. The two-tool run (Snyk Code and Semgrep, run d469d750) is recorded in per_sample_d469d750.csv, run_record_d469d750.json, comparison.json and comparison_confusion.csv. Each tool was run once; no generative LLM was evaluated.
 Tests: python3 -m unittest tests.test_regressions tests.test_stats
