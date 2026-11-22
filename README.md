@@ -74,7 +74,7 @@ Sample files must be inside the `data/` folder (path restriction, SPR-10).
    python3 data/prepare_owasp_samples.py /path/to/BenchmarkJava --per-category 34
    python3 -c "from data.load_dataset import load_from_metadata_csv; load_from_metadata_csv('data/owasp_metadata.csv')"
    ```
-4. Run both real tools (about an hour on a laptop):
+4. Run both real tools:
    ```bash
    export SECUREREVIEW_REAL=1
    export SEMGREP_CONFIG=/path/to/semgrep-rules/java
@@ -136,4 +136,4 @@ tests/               unit and regression tests
 - Scoring counts any finding as a flag, not only findings matching the sample's CWE.
 - Snyk Code uploads code to Snyk's cloud; do not scan private code without permission.
 - No login: the dashboard is read-only and meant for local use. Not tested on Windows.
-- Open minor bugs BUG-06 to BUG-09 do not affect scoring (see the report).
+- Open minor issues BUG-06, 08 and 09 (dashboard first-load write, adding a third tool needs more than one adapter, a deprecated Streamlit setting) do not affect scoring; see the report.
