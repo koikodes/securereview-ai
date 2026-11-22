@@ -9,11 +9,11 @@ Pipeline: Benchmark dataset -> AI reviewer -> Static baseline -> Ground truth co
 
 ## Team (Group 11)
 
-| Member | Role |
+| Member | Contribution |
 |---|---|
-| Hermajesty Williamson | Dataset loader, orchestrator, scoring and statistics, dashboard, real-tool integration, experiment run, tests, documentation |
-| Alston Williams | AI reviewer adapter (Snyk Code) |
-| Jabari Staton | Static baseline adapter (Semgrep) |
+| Hermajesty Williamson | Designed and built the system (loader, orchestrator, scoring and statistics, dashboard), integrated and ran the real tools, tests, documentation |
+| Alston Williams | Feedback and project architecture |
+| Jabari Staton | Feedback and project architecture |
 
 See the final report for the full contribution summary.
 
